@@ -15,7 +15,7 @@ import { GET_LOGS, SET_LOADING, LOGS_ERROR } from './types';
 // 	};
 // };
 
-// Get all the logs from backend
+// Get all the logs from server (backend)
 export const getLogs = () => async (dispatch) => {
 	try {
 		setLoading();
