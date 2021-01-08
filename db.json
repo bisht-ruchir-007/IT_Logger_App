@@ -1,42 +1,42 @@
 {
-    "logs": [
-      {
-        "id": 1,
-        "message": "Changed hard drive on WorkStation #005",
-        "attention": false,
-        "date": "03-02-2019",
-        "tech": "Sam Smith"
-      },
-      {
-        "id": 2,
-        "message": "WorkStation #007 not posting",
-        "attention": true,
-        "date": "03-02-2019",
-        "tech": "John Deo"
-      },
-      {
-        "id": 3,
-        "message": "Changed memory on WorkStation #050",
-        "attention": false,
-        "date": "03-02-2019",
-        "tech": "Sara Wilson"
-      }
-    ],
-    "techs": [
-      {
-        "id": 1,
-        "firstname": "John",
-        "lastname": "Deo"
-      },
-      {
-        "id": 2,
-        "firstname": "Sam",
-        "lastname": "Smith"
-      },
-      {
-        "id": 3,
-        "firstname": "Sara",
-        "lastname": "Wilson"
-      }
-    ]
-  }
+  "logs": [
+    {
+      "message": "Changed the network card on Station #007",
+      "attention": false,
+      "tech": "John Deo",
+      "date": "2021-01-08T08:04:33.778Z",
+      "id": 1
+    },
+    {
+      "message": "Hard Drive crashed at Station #017",
+      "attention": true,
+      "tech": "Sam Smith",
+      "date": "2021-01-08T08:04:57.780Z",
+      "id": 2
+    },
+    {
+      "message": "System down at station #456",
+      "attention": true,
+      "tech": "Sara Williams",
+      "date": "2021-01-08T08:05:40.527Z",
+      "id": 3
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstname": "John",
+      "lastname": "Deo"
+    },
+    {
+      "id": 2,
+      "firstname": "Sam",
+      "lastname": "Smith"
+    },
+    {
+      "id": 3,
+      "firstname": "Sara",
+      "lastname": "Wilson"
+    }
+  ]
+}
