@@ -1,11 +1,11 @@
 {
   "logs": [
     {
+      "id": 1,
       "message": "Changed the network card on Station #007",
       "attention": false,
       "tech": "John Deo",
-      "date": "2021-01-08T08:04:33.778Z",
-      "id": 1
+      "date": "2021-01-08T13:35:27.153Z"
     },
     {
       "id": 2,

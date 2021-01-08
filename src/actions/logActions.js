@@ -6,7 +6,8 @@ import {
 	UPDATE_LOG,
 	DELETE_LOG,
 	SET_CURRENT,
-	CLEAR_CURRENT
+	CLEAR_CURRENT,
+	SEARCH_LOGS
 } from './types';
 
 // Get all the logs from backend
@@ -104,6 +105,25 @@ export const deleteLog = (id) => async (dispatch) => {
 		dispatch({
 			type: DELETE_LOG,
 			payload: id
+		});
+	} catch (err) {
+		dispatch({
+			type: LOGS_ERROR,
+			payload: err.response.data
+		});
+	}
+};
+
+// Search server logs
+export const searchLogs = (text) => async (dispatch) => {
+	try {
+		setLoading();
+		const res = await fetch(`http://localhost:5000/logs?q=${text}`);
+		const data = await res.json();
+
+		dispatch({
+			type: SEARCH_LOGS,
+			payload: data
 		});
 	} catch (err) {
 		dispatch({
