@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+import TechSelectOptions from '../techs/TechSelectOptions';
 import { updateLog } from '../../actions/logActions';
 
 const EditLogmodal = ({ current, updateLog }) => {
@@ -49,9 +49,6 @@ const EditLogmodal = ({ current, updateLog }) => {
 							value={message}
 							onChange={(e) => setMessage(e.target.value)}
 						/>
-						{/* <label htmlFor='message' className='active'>
-							Log Message
-						</label> */}
 					</div>
 				</div>
 				<div className='row'>
@@ -65,9 +62,7 @@ const EditLogmodal = ({ current, updateLog }) => {
 							<option value='' disable>
 								Select a Technician
 							</option>
-							<option value='John Deo'>John Deo</option>
-							<option value='Sam Smith'>Sam Smith</option>
-							<option value='Sara Williams'>Sara Williams</option>
+							<TechSelectOptions />
 						</select>
 						<label htmlFor='message' className='active'>
 							Technician Name
