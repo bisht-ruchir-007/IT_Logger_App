@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
-import { deleteLog } from '../../actions/logActions';
+import { deleteLog, updateLog, setCurrent } from '../../actions/logActions';
 
 import M from 'materialize-css/dist/js/materialize.min.js';
 
-const Logitem = ({ log, deleteLog }) => {
+const Logitem = ({ log, deleteLog, setCurrent }) => {
 	const onDelete = () => {
 		deleteLog(log.id);
 		M.toast({ html: `Log with ID : ${log.id} is Deleted.` });
@@ -15,7 +15,11 @@ const Logitem = ({ log, deleteLog }) => {
 	return (
 		<li className='collection-item'>
 			<div>
-				<a href='#edit-log-model' className={`modal-trigger ${log.attention ? 'red-text' : 'blue-text'}`}>
+				<a
+					href='#edit-log-model'
+					className={`modal-trigger ${log.attention ? 'red-text' : 'blue-text'}`}
+					onClick={() => setCurrent(log)}
+				>
 					{log.message}
 				</a>
 				<br />
@@ -36,7 +40,8 @@ const Logitem = ({ log, deleteLog }) => {
 
 Logitem.propTypes = {
 	log: PropTypes.object.isRequired,
-	deleteLog: PropTypes.func.isRequired
+	deleteLog: PropTypes.func.isRequired,
+	setCurrent: PropTypes.func.isRequired
 };
 
-export default connect(null, { deleteLog })(Logitem);
+export default connect(null, { deleteLog, setCurrent })(Logitem);
